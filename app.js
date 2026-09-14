@@ -1,297 +1,98 @@
-/* =========================
-   MOBILE MENU
-========================= */
+// Mobile navigation
 
 const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("navLinks");
+const navMenu = document.getElementById("navMenu");
 
-menuBtn.addEventListener("click", function () {
-
-  nav.classList.toggle("open");
-
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
 });
 
 
-/* Close menu after clicking link */
+// Close mobile menu after clicking a link
 
-document.querySelectorAll("nav a").forEach(function (link) {
-
-  link.addEventListener("click", function () {
-
-    nav.classList.remove("open");
-
-  });
-
+document.querySelectorAll("#navMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
 });
 
 
-/* =========================
-   COPY COMMAND
-========================= */
+// Copy buttons
 
+const copyButtons = document.querySelectorAll(".copy-btn");
 const toast = document.getElementById("toast");
 
-document.querySelectorAll(".copy").forEach(function (button) {
+copyButtons.forEach(button => {
 
-  button.addEventListener("click", async function () {
+    button.addEventListener("click", async () => {
 
-    const command = button.getAttribute("data-copy");
+        const text = button.getAttribute("data-copy");
 
-    try {
+        try {
 
-      await navigator.clipboard.writeText(command);
+            await navigator.clipboard.writeText(text);
 
-    } catch (error) {
+            const originalText = button.textContent;
 
-      console.log("Copy failed");
+            button.textContent = "Copied!";
 
-    }
+            toast.textContent = "Command copied to clipboard";
+            toast.classList.add("show");
 
-    toast.classList.add("show");
+            setTimeout(() => {
+                button.textContent = originalText;
+                toast.classList.remove("show");
+            }, 1500);
 
-    setTimeout(function () {
+        } catch (error) {
 
-      toast.classList.remove("show");
+            toast.textContent = "Copy failed";
+            toast.classList.add("show");
 
-    }, 1500);
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 1500);
 
-  });
-
-});
-
-
-/* =========================
-   QUIZ
-========================= */
-
-const questions = [
-
-  {
-    question:
-      "Which tool is mainly used for version control?",
-
-    answers: [
-      "Git",
-      "GitHub",
-      "Netlify",
-      "HTML"
-    ],
-
-    correct: 0
-  },
-
-
-  {
-    question:
-      "Which platform stores Git repositories online?",
-
-    answers: [
-      "Git",
-      "GitHub",
-      "Netlify",
-      "CSS"
-    ],
-
-    correct: 1
-  },
-
-
-  {
-    question:
-      "What happens after you push changes to a GitHub repository connected to Netlify?",
-
-    answers: [
-      "The computer shuts down",
-      "The files are deleted",
-      "Netlify can detect the update and redeploy the website",
-      "Git is uninstalled"
-    ],
-
-    correct: 2
-  }
-
-];
-
-
-let currentQuestion = 0;
-
-let score = 0;
-
-let answered = false;
-
-
-const questionElement =
-  document.getElementById("question");
-
-const answersElement =
-  document.getElementById("answers");
-
-const progressElement =
-  document.getElementById("progress");
-
-const bar =
-  document.getElementById("bar");
-
-const nextButton =
-  document.getElementById("nextBtn");
-
-const resultElement =
-  document.getElementById("result");
-
-
-/* =========================
-   LOAD QUESTION
-========================= */
-
-function loadQuestion() {
-
-  answered = false;
-
-  nextButton.disabled = true;
-
-  resultElement.textContent = "";
-
-  const current =
-    questions[currentQuestion];
-
-
-  questionElement.textContent =
-    current.question;
-
-
-  progressElement.textContent =
-    `Question ${currentQuestion + 1} of ${questions.length}`;
-
-
-  bar.style.width =
-    `${((currentQuestion + 1) / questions.length) * 100}%`;
-
-
-  answersElement.innerHTML = "";
-
-
-  current.answers.forEach(function (answer, index) {
-
-    const button =
-      document.createElement("button");
-
-    button.className = "answer";
-
-    button.textContent = answer;
-
-    button.addEventListener("click", function () {
-
-      selectAnswer(index, button);
+        }
 
     });
 
-    answersElement.appendChild(button);
-
-  });
-
-}
-
-
-/* =========================
-   SELECT ANSWER
-========================= */
-
-function selectAnswer(index, selectedButton) {
-
-  if (answered) return;
-
-  answered = true;
-
-  const current =
-    questions[currentQuestion];
-
-
-  const allButtons =
-    document.querySelectorAll(".answer");
-
-
-  allButtons.forEach(function (button, i) {
-
-    if (i === current.correct) {
-
-      button.classList.add("correct");
-
-    }
-
-  });
-
-
-  if (index === current.correct) {
-
-    score++;
-
-    resultElement.textContent =
-      "Correct! Great job.";
-
-  } else {
-
-    selectedButton.classList.add("wrong");
-
-    resultElement.textContent =
-      "Not quite. Check the green answer.";
-
-  }
-
-
-  nextButton.disabled = false;
-
-}
-
-
-/* =========================
-   NEXT QUESTION
-========================= */
-
-nextButton.addEventListener("click", function () {
-
-  if (currentQuestion < questions.length - 1) {
-
-    currentQuestion++;
-
-    loadQuestion();
-
-  } else {
-
-    questionElement.textContent =
-      `Quiz Complete — ${score}/${questions.length} Correct!`;
-
-    answersElement.innerHTML = "";
-
-    resultElement.textContent =
-      score === questions.length
-        ? "Excellent! You are ready for your presentation."
-        : "Good job! Review the concepts and try again.";
-
-    nextButton.textContent =
-      "Restart Quiz ↻";
-
-    nextButton.disabled = false;
-
-    nextButton.onclick = function () {
-
-      currentQuestion = 0;
-
-      score = 0;
-
-      nextButton.textContent =
-        "Next Question →";
-
-      nextButton.onclick = null;
-
-      loadQuestion();
-
-    };
-
-  }
-
 });
 
 
-/* Start quiz */
+// Small reveal effect
 
-loadQuestion();
+const cards = document.querySelectorAll(
+    ".concept-card, .step-card, .command-card, .workflow-item"
+);
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.08
+    }
+);
+
+
+cards.forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(15px)";
+    card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+    observer.observe(card);
+
+});
