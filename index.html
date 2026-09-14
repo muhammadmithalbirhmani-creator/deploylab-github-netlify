@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DeployLab | GitHub & Netlify</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="header">
+
+  <div class="container nav">
+
+    <a href="#home" class="brand">
+      <span class="brand-logo">D</span>
+      Deploy<span>Lab</span>
+    </a>
+
+    <nav id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#learn">Learn</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#commands">Commands</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+
+    <a href="#learn" class="nav-button">
+      Start Learning
+    </a>
+
+    <button class="menu" id="menuBtn">
+      ☰
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        <span></span>
+        PRACTICAL WEB DEPLOYMENT
+      </div>
+
+      <h1>
+        Build it.<br>
+        <span>Deploy it.</span><br>
+        Share it.
+      </h1>
+
+      <p>
+        Learn how to deploy your website using Git,
+        GitHub and Netlify — from your local computer
+        to a live public website.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#learn" class="btn primary">
+          Explore Course →
+        </a>
+
+        <a href="#workflow" class="btn secondary">
+          View Workflow
+        </a>
+
+      </div>
+
+      <div class="stats">
+
+        <div>
+          <strong>03</strong>
+          <small>Core Tools</small>
+        </div>
+
+        <div>
+          <strong>08</strong>
+          <small>Key Concepts</small>
+        </div>
+
+        <div>
+          <strong>01</strong>
+          <small>Live Website</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- TERMINAL -->
+
+    <div class="terminal">
+
+      <div class="terminal-header">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <b>deploy.sh</b>
+
+      </div>
+
+      <div class="terminal-body">
+
+        <p>
+          <i>$</i> git add .
+        </p>
+
+        <p>
+          <i>$</i>
+          git commit -m
+          <em>"updated website"</em>
+        </p>
+
+        <p>
+          <i>$</i> git push
+        </p>
+
+        <hr>
+
+        <p class="success">
+          ✓ GitHub repository updated
+        </p>
+
+        <p class="success">
+          ✓ Netlify detected changes
+        </p>
+
+        <p class="success">
+          ✓ Deployment successful
+        </p>
+
+        <div class="live-url">
+          https://your-site.netlify.app
+          <span>↗</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= TOOLS ================= -->
+
+<section class="tools" id="learn">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="kicker">
+          THE TOOLKIT
+        </span>
+
+        <h2>
+          Three tools. One smooth workflow.
+        </h2>
+
+      </div>
+
+      <p>
+        Understand the role of each tool before
+        deploying your first website.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+      <!-- GIT -->
+
+      <article class="card">
+
+        <div class="tool-icon git">
+          G
+        </div>
+
+        <span class="tag">
+          VERSION CONTROL
+        </span>
+
+        <h3>
+          Git
+        </h3>
+
+        <p>
+          Git tracks changes in your project and
+          helps you manage different versions of
+          your code.
+        </p>
+
+        <strong>
+          Think: Code History
+        </strong>
+
+      </article>
+
+
+      <!-- GITHUB -->
+
+      <article class="card featured">
+
+        <div class="tool-icon github">
+          GH
+        </div>
+
+        <span class="tag">
+          ONLINE REPOSITORY
+        </span>
+
+        <h3>
+          GitHub
+        </h3>
+
+        <p>
+          GitHub stores your Git repositories online
+          so your project can be shared, backed up
+          and connected to deployment.
+        </p>
+
+        <strong>
+          Think: Online Project Home
+        </strong>
+
+      </article>
+
+
+      <!-- NETLIFY -->
+
+      <article class="card">
+
+        <div class="tool-icon netlify">
+          N
+        </div>
+
+        <span class="tag">
+          DEPLOYMENT
+        </span>
+
+        <h3>
+          Netlify
+        </h3>
+
+        <p>
+          Netlify publishes your website to the
+          internet and provides a public URL.
+        </p>
+
+        <strong>
+          Think: Make It Live
+        </strong>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= WORKFLOW ================= -->
+
+<section class="workflow" id="workflow">
+
+  <div class="container">
+
+    <div class="center-heading">
+
+      <span class="kicker">
+        THE BIG PICTURE
+      </span>
+
+      <h2>
+        From local files to live website
+      </h2>
+
+      <p>
+        Follow the complete deployment workflow.
+      </p>
+
+    </div>
+
+
+    <div class="flow">
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          01
+        </div>
+
+        <div class="flow-icon">
+          💻
+        </div>
+
+        <h3>
+          Local Computer
+        </h3>
+
+        <p>
+          Create your website files.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          02
+        </div>
+
+        <div class="flow-icon">
+          G
+        </div>
+
+        <h3>
+          Git
+        </h3>
+
+        <p>
+          Track and save changes.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          03
+        </div>
+
+        <div class="flow-icon">
+          GH
+        </div>
+
+        <h3>
+          GitHub
+        </h3>
+
+        <p>
+          Store repository online.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="flow-item">
+
+        <div class="flow-number">
+          04
+        </div>
+
+        <div class="flow-icon">
+          N
+        </div>
+
+        <h3>
+          Netlify
+        </h3>
+
+        <p>
+          Deploy and publish.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="flow-item live">
+
+        <div class="flow-number">
+          05
+        </div>
+
+        <div class="flow-icon">
+          🌐
+        </div>
+
+        <h3>
+          Live Website
+        </h3>
+
+        <p>
+          Share your public URL.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ROADMAP ================= -->
+
+<section class="roadmap">
+
+  <div class="container roadmap-grid">
+
+    <div>
+
+      <span class="kicker">
+        STEP-BY-STEP
+      </span>
+
+      <h2>
+        Your deployment roadmap
+      </h2>
+
+      <p>
+        Follow these steps as your practical
+        deployment checklist.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+      <div class="step">
+
+        <span>01</span>
+
+        <div>
+          <h3>
+            Create GitHub Account
+          </h3>
+
+          <p>
+            Sign up and prepare your GitHub profile.
+          </p>
+        </div>
+
+        <b>✓</b>
+
+      </div>
+
+
+      <div class="step">
+
+        <span>02</span>
+
+        <div>
+          <h3>
+            Create Repository
+          </h3>
+
+          <p>
+            Create a public repository for your website.
+          </p>
+        </div>
+
+        <b>✓</b>
+
+      </div>
+
+
+      <div class="step">
+
+        <span>03</span>
+
+        <div>
+          <h3>
+            Upload Website Files
+          </h3>
+
+          <p>
+            Add index.html, CSS and JavaScript files.
+          </p>
+        </div>
+
+        <b>✓</b>
+
+      </div>
+
+
+      <div class="step">
+
+        <span>04</span>
+
+        <div>
+          <h3>
+            Connect GitHub to Netlify
+          </h3>
+
+          <p>
+            Import the existing GitHub project.
+          </p>
+        </div>
+
+        <b>✓</b>
+
+      </div>
+
+
+      <div class="step">
+
+        <span>05</span>
+
+        <div>
+          <h3>
+            Deploy Site
+          </h3>
+
+          <p>
+            Deploy your project and receive a public URL.
+          </p>
+        </div>
+
+        <b>✓</b>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= COMMANDS ================= -->
+
+<section class="commands" id="commands">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="kicker">
+          QUICK REFERENCE
+        </span>
+
+        <h2>
+          Git commands you should know
+        </h2>
+
+      </div>
+
+      <p>
+        Remember:
+        <strong>ADD → COMMIT → PUSH</strong>
+      </p>
+
+    </div>
+
+
+    <div class="command-grid">
+
+
+      <article class="command-card">
+
+        <div class="command-top">
+
+          <span>
+            01
+          </span>
+
+          <button class="copy" data-copy="git add .">
+            Copy
+          </button>
+
+        </div>
+
+        <code>
+          git add .
+        </code>
+
+        <h3>
+          Prepare Changes
+        </h3>
+
+        <p>
+          Adds changed files to the staging area.
+        </p>
+
+      </article>
+
+
+      <article class="command-card">
+
+        <div class="command-top">
+
+          <span>
+            02
+          </span>
+
+          <button
+            class="copy"
+            data-copy='git commit -m "updated website"'>
+            Copy
+          </button>
+
+        </div>
+
+        <code>
+          git commit -m "updated website"
+        </code>
+
+        <h3>
+          Save a Version
+        </h3>
+
+        <p>
+          Saves prepared changes with a message.
+        </p>
+
+      </article>
+
+
+      <article class="command-card">
+
+        <div class="command-top">
+
+          <span>
+            03
+          </span>
+
+          <button class="copy" data-copy="git push">
+            Copy
+          </button>
+
+        </div>
+
+        <code>
+          git push
+        </code>
+
+        <h3>
+          Upload to GitHub
+        </h3>
+
+        <p>
+          Sends committed changes to GitHub.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= IMPORTANT ================= -->
+
+<section class="important">
+
+  <div class="container important-box">
+
+    <div class="important-icon">
+      !
+    </div>
+
+    <div>
+
+      <span class="kicker">
+        IMPORTANT
+      </span>
+
+      <h2>
+        Keep your home page as
+        <code>index.html</code>
+      </h2>
+
+      <p>
+        Your main/home webpage should be named
+        <code>index.html</code>.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section class="quiz" id="quiz">
+
+  <div class="container quiz-container">
+
+    <div class="center-heading">
+
+      <span class="kicker">
+        CHECK YOUR KNOWLEDGE
+      </span>
+
+      <h2>
+        Quick Deployment Quiz
+      </h2>
+
+      <p>
+        Test yourself before presenting in class.
+      </p>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+      <div class="quiz-progress">
+
+        <span id="progress">
+          Question 1 of 3
+        </span>
+
+        <div>
+          <i id="bar"></i>
+        </div>
+
+      </div>
+
+
+      <h3 id="question">
+        Which tool is mainly used for version control?
+      </h3>
+
+
+      <div id="answers" class="answers">
+      </div>
+
+
+      <button
+        id="nextBtn"
+        class="btn primary next"
+        disabled>
+
+        Next Question →
+
+      </button>
+
+
+      <div id="result" class="result">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+  <div class="container cta">
+
+    <div>
+
+      <span class="kicker">
+        READY TO DEPLOY?
+      </span>
+
+      <h2>
+        Turn your project into a live website.
+      </h2>
+
+      <p>
+        Build locally, push to GitHub,
+        connect Netlify and share your result.
+      </p>
+
+    </div>
+
+    <a href="#home" class="btn light">
+      Back to Top ↑
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container footer">
+
+    <span>
+      © 2026 DeployLab
+    </span>
+
+    <span>
+      Educational Project • GitHub + Netlify
+    </span>
+
+  </div>
+
+</footer>
+
+
+<div class="toast" id="toast">
+  Command copied ✓
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
